@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecom/views/shared/category_btn.dart';
-import 'package:flutter_ecom/views/shared/custom_spacer_wiget.dart';
+import 'package:flutter_ecom/views/shared/spacer/custom_spacer_wiget.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../models/sneaker_model.dart';
 import '../../services/helper.dart';
 import '../shared/appstyle.dart';
-import '../shared/latest_shoes_wiget.dart';
+import '../shared/button/category_btn.dart';
+import '../shared/home/latest_shoes_wiget.dart';
 
 class ProductByCart extends StatefulWidget {
   const ProductByCart({super.key, required this.tabIndex});
@@ -140,7 +140,7 @@ class _ProductByCartState extends State<ProductByCart>
   }
 
   Future<dynamic> filter() {
-    double _value = 100;
+    double value = 100;
     return showModalBottomSheet(
         context: context,
         isScrollControlled: true,
@@ -207,13 +207,13 @@ class _ProductByCartState extends State<ProductByCart>
                     ),
                     const CustomSpacer(),
                     Slider(
-                        value: _value,
+                        value: value,
                         activeColor: Colors.black,
                         inactiveColor: Colors.grey,
                         thumbColor: Colors.black,
                         max: 500,
                         divisions: 50,
-                        label: _value.toString(),
+                        label: value.toString(),
                         secondaryTrackValue: 200,
                         onChanged: (double val) {}),
                     const CustomSpacer(),

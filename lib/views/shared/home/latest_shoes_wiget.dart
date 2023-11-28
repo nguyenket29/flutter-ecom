@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
-import '../../models/sneaker_model.dart';
-import 'stagger_title.dart';
+import '../../../models/sneaker_model.dart';
+import '../stagger_title.dart';
 
 class LatestShoesWiget extends StatelessWidget {
   const LatestShoesWiget({

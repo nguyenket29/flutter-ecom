@@ -6,7 +6,7 @@ import 'package:flutter_ecom/views/ui/search_page.dart';
 import 'package:provider/provider.dart';
 
 import '../../controllers/main_screen_controller.dart';
-import '../shared/bottom_nav.dart';
+import '../shared/navbar/bottom_nav.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -16,22 +16,24 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  List<Widget> pageList = const [
-    HomePage(),
-    SearchPage(),
-    HomePage(),
-    CartPage(),
-    ProfilePage()
+  List<Widget> pageList = [
+    const HomePage(),
+    const SearchPage(),
+    const HomePage(),
+    const CartPage(),
+    const ProfilePage()
   ];
 
   @override
   Widget build(BuildContext context) {
     return Consumer<MainScreenNotifier>(
       builder: (context, mainScreenNotifier, child) {
-        return Scaffold(
-          body: Scaffold(
-              body: pageList[mainScreenNotifier.pageIndex],
-              bottomNavigationBar: const BottomNavBar()),
+        return SafeArea(
+          child: Scaffold(
+            backgroundColor: const Color(0xFFE2E2E2),
+            body: pageList[mainScreenNotifier.pageIndex],
+            bottomNavigationBar: const BottomNavBar(),
+          ),
         );
       },
     );

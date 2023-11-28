@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:provider/provider.dart';
 
-import '../../controllers/main_screen_controller.dart';
+import '../../../controllers/main_screen_controller.dart';
 import 'bottom_nav_wiget.dart';
 
 class BottomNavBar extends StatelessWidget {
