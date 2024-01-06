@@ -53,6 +53,7 @@ class BottomNavBar extends StatelessWidget {
                 BottomNavWiget(
                   onTap: () {
                     mainScreenNotifier.pageIndex = 3;
+                    mainScreenNotifier.isCartClicked = true;
                   },
                   iconData: mainScreenNotifier.pageIndex == 3
                       ? Ionicons.cart

@@ -58,83 +58,85 @@ class _ProductByCartState extends State<ProductByCart>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFE2E2E2),
-      body: SizedBox(
-        height: MediaQuery.of(context).size.height,
-        child: Stack(children: [
-          Container(
-            padding: const EdgeInsets.fromLTRB(16, 45, 0, 0),
-            height: MediaQuery.of(context).size.height * 0.4,
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage("assets/images/top_image.png"),
-                    fit: BoxFit.fill)),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(6, 12, 16, 18),
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.pop(context);
-                          },
-                          child: const Icon(
-                            Ionicons.close,
-                            color: Colors.white,
+      body: SafeArea(
+        child: SizedBox(
+          height: MediaQuery.of(context).size.height,
+          child: Stack(children: [
+            Container(
+              padding: const EdgeInsets.fromLTRB(15, 15, 0, 0),
+              height: MediaQuery.of(context).size.height * 0.4,
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage("assets/images/top_image.png"),
+                      fit: BoxFit.fill)),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(6, 12, 16, 18),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
+                            child: const Icon(
+                              Ionicons.close,
+                              color: Colors.white,
+                            ),
                           ),
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            filter();
-                          },
-                          child: const Icon(
-                            FontAwesomeIcons.sliders,
-                            color: Colors.white,
-                          ),
-                        )
-                      ]),
-                ),
-                TabBar(
-                  padding: EdgeInsets.zero,
-                  indicatorSize: TabBarIndicatorSize.label,
-                  indicatorColor: Colors.transparent,
-                  controller: _tabController,
-                  isScrollable: true,
-                  labelColor: Colors.white,
-                  labelStyle: appStype(24, Colors.white, FontWeight.bold),
-                  unselectedLabelColor: Colors.grey.withOpacity(0.3),
-                  tabs: const [
-                    Tab(
-                      text: "Men Shoes",
-                    ),
-                    Tab(
-                      text: "Women Shoes",
-                    ),
-                    Tab(
-                      text: "Kids Shoes",
-                    )
-                  ],
-                ),
-              ],
+                          GestureDetector(
+                            onTap: () {
+                              filter();
+                            },
+                            child: const Icon(
+                              FontAwesomeIcons.sliders,
+                              color: Colors.white,
+                            ),
+                          )
+                        ]),
+                  ),
+                  TabBar(
+                    padding: EdgeInsets.zero,
+                    indicatorSize: TabBarIndicatorSize.label,
+                    indicatorColor: Colors.transparent,
+                    controller: _tabController,
+                    isScrollable: true,
+                    labelColor: Colors.white,
+                    labelStyle: appStype(24, Colors.white, FontWeight.bold),
+                    unselectedLabelColor: Colors.grey.withOpacity(0.3),
+                    tabs: const [
+                      Tab(
+                        text: "Men Shoes",
+                      ),
+                      Tab(
+                        text: "Women Shoes",
+                      ),
+                      Tab(
+                        text: "Kids Shoes",
+                      )
+                    ],
+                  ),
+                ],
+              ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(
-                top: MediaQuery.of(context).size.height * 0.175,
-                left: 16,
-                right: 12),
-            child: ClipRRect(
-              borderRadius: const BorderRadius.all(Radius.circular(16)),
-              child: TabBarView(controller: _tabController, children: [
-                LatestShoesWiget(male: _male),
-                LatestShoesWiget(male: _female),
-                LatestShoesWiget(male: _kid)
-              ]),
-            ),
-          )
-        ]),
+            Padding(
+              padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height * 0.15,
+                  left: 16,
+                  right: 12),
+              child: ClipRRect(
+                borderRadius: const BorderRadius.all(Radius.circular(16)),
+                child: TabBarView(controller: _tabController, children: [
+                  LatestShoesWiget(male: _male),
+                  LatestShoesWiget(male: _female),
+                  LatestShoesWiget(male: _kid)
+                ]),
+              ),
+            )
+          ]),
+        ),
       ),
     );
   }
@@ -215,7 +217,7 @@ class _ProductByCartState extends State<ProductByCart>
                         divisions: 50,
                         label: value.toString(),
                         secondaryTrackValue: 200,
-                        onChanged: (double val) {}),
+                        onChanged: (double value) {}),
                     const CustomSpacer(),
                     Text(
                       "Branchs",

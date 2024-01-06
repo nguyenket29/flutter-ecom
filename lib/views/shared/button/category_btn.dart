@@ -22,7 +22,7 @@ class CategoryBtn extends StatelessWidget {
         child: Center(
           child: Text(
             label,
-            style: appStype(20, btnColor, FontWeight.w600),
+            style: appStype(16, btnColor, FontWeight.w600),
           ),
         ),
       ),

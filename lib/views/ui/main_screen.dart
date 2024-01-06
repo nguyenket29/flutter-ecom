@@ -30,9 +30,9 @@ class _MainScreenState extends State<MainScreen> {
       builder: (context, mainScreenNotifier, child) {
         return SafeArea(
           child: Scaffold(
-            backgroundColor: const Color(0xFFE2E2E2),
             body: pageList[mainScreenNotifier.pageIndex],
-            bottomNavigationBar: const BottomNavBar(),
+            bottomNavigationBar:
+                mainScreenNotifier.isCartClicked ? null : const BottomNavBar(),
           ),
         );
       },

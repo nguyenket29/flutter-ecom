@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         backgroundColor: const Color(0xFFE2E2E2),
         body: SingleChildScrollView(
           child: SizedBox(
-            height: MediaQuery.of(context).size.height,
+            height: MediaQuery.of(context).size.height * 0.9,
             child: Stack(children: [
               Container(
                 padding: const EdgeInsets.fromLTRB(16, 35, 0, 0),
